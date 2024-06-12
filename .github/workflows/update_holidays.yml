@@ -8,6 +8,9 @@ on:
       - main  # Optional: also run the workflow on push to the data branch
   workflow_dispatch:
 
+permissions:
+  contents: write
+  
 jobs:
   fetch_and_update:
     runs-on: ubuntu-latest
