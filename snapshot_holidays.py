@@ -12,12 +12,12 @@ def fetch_and_save_data():
     url_en = 'https://www.1823.gov.hk/common/ical/en.json'
 
     # Fetch the data
-    response_tc = requests.get(url_tc, timeout=30)
-    response_en = requests.get(url_en, timeout=30)
+    response_tc = requests.get(url_tc, timeout=30, headers={'Accept-Charset': 'utf-8'})
+    response_en = requests.get(url_en, timeout=30, headers={'Accept-Charset': 'utf-8'})
 
     if response_tc.status_code == 200 and response_en.status_code == 200:
-        response_tc.encoding = 'utf-8-sig'
-        response_en.encoding = 'utf-8-sig'
+        response_tc.encoding = 'utf-8'
+        response_en.encoding = 'utf-8'
         data_tc = response_tc.json()
         data_en = response_en.json()
 
