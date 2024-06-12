@@ -18,8 +18,8 @@ def fetch_and_save_data():
     if response_tc.status_code == 200 and response_en.status_code == 200:
         response_tc.encoding = 'utf-8'
         response_en.encoding = 'utf-8'
-        data_tc = response_tc.json()
-        data_en = response_en.json()
+        data_tc = json.loads(response_tc.content.decode('utf-8-sig'))
+        data_en = json.loads(response_en.content.decode('utf-8-sig'))
 
         # Extract vcalendar data
         vcalendar_tc = data_tc['vcalendar'][0]['vevent']
