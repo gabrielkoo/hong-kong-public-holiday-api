@@ -5,7 +5,7 @@ on:
     - cron: '0 0 * * 0'  # Runs every week (Sunday at midnight)
   push:
     branches:
-      - data  # Optional: also run the workflow on push to the data branch
+      - main  # Optional: also run the workflow on push to the data branch
   workflow_dispatch:
 
 jobs:
